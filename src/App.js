@@ -4,7 +4,7 @@ import { router } from './RouterPages/LinkRouter/ActionRouter';
 
 function App() {
   return (
-    <div className="">
+    <div className=" w-10/12 mx-auto">
      {/* <h1>This is Start Page</h1> */}
 
      <RouterProvider router={router}>
