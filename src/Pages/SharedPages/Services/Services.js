@@ -3,9 +3,31 @@ import teath from '../../../assets/fluoride.png';
 import cavity from '../../../assets/cavity.png';
 import whitening from '../../../assets/whitening.png';
 import treatment from '../../../assets/treatment.png';
+import Service from './Service';
 
 
 const Services = () => {
+
+    const steads=[
+        {
+            id:1,
+            name:"Fluoride Treatment",
+            description:"If a dog chews shoes whose shoes does he choose?",
+            img:`${teath}`
+        },
+        {
+            id:2,
+            name:"Cavity Filling",
+            description:"If a dog chews shoes whose shoes does he choose?",
+            img:`${cavity}`
+        },
+        {
+            id:3,
+            name:"Teeth Whitening",
+            description:"If a dog chews shoes whose shoes does he choose?",
+            img:`${whitening}`
+        }
+    ]
     return (
         <div className=' mt-36'>
             <div className='text-center '>
@@ -13,38 +35,14 @@ const Services = () => {
                 <h3 className=' text-3xl font-sans'>Services We Provide</h3>
             </div>
             <div className='lg:flex grid gap-4 mt-8 grid-cols-1'>
-                <div className="card bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
-                        <img src={teath} alt="Shoes" className="rounded-xl" />
-                    </figure>
-                    <div className="card-body items-center text-center">
-                        <h2 className="">Fluoride Treatment</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
 
-                    </div>
-                </div>
-                {/* 2nd section */}
-                <div className="card bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
-                        <img src={cavity} alt="Shoes" className="rounded-xl" />
-                    </figure>
-                    <div className="card-body items-center text-center">
-                        <h2 className="">Cavity Filling</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-
-                    </div>
-                </div>
-                {/* 3rd section */}
-                <div className="card  bg-base-100 shadow-xl">
-                    <figure className="px-10 pt-10">
-                        <img src={whitening} alt="Shoes" className="rounded-xl" />
-                    </figure>
-                    <div className="card-body items-center text-center">
-                        <h2 className="">Teeth Whitening</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
-
-                    </div>
-                </div>
+                {
+                    steads.map(stead =><Service
+                    key={stead.id}
+                    stead={stead}
+                    ></Service>)
+                }
+                
             </div>
 
             <div className='p-14 mt-10'>

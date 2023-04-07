@@ -2,21 +2,27 @@ import React from 'react';
 
 const Review = ({ reviews }) => {
 
-    const { img, name, description, } = reviews;
+    const { img, name, description, location} = reviews;
 
     return (
         <div className='m-3'>
-            <div className="card bg-base-100 shadow-xl">
-                <figure className="px-10 pt-10">
-                    <img src={img} alt="Shoes" className="rounded-xl h-40" />
-                </figure>
-                <div className="card-body items-center text-center">
-                    <h2 className="card-title">{name}</h2>
+            <div className="card shadow-xl">
+
+                <div className="card-body items-center">
+
                     <p>{description}</p>
-                    {/* <div className="card-actions">
-          <button className="btn btn-info btn-outline btn-sm">Book Now</button>
-        </div> */}
                 </div>
+
+                <div className='flex mb-5'>
+                    <figure className="px-5">
+                        <img src={img} alt="" className="rounded-xl h-10" />
+                    </figure>
+                    <div>
+                        <h2 className="">{name}</h2>
+                        <h4>{location}</h4>
+                    </div>
+                </div>
+
             </div>
         </div>
     );

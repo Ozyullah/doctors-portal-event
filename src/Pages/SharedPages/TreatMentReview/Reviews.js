@@ -2,7 +2,10 @@ import React from 'react';
 import patient from '../../../assets/people1.png';
 import Review from './Review';
 import comma from '../../../assets/Icon/quote.svg';
+
+
 import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const Reviews = () => {
 
@@ -60,9 +63,9 @@ const Reviews = () => {
     ]
     return (
         <div className='mt-10 '>
-            <div className='flex bg-gray-800'>
+            <div className='flex'>
                 <div>
-                    <h3>Testimonial</h3>
+                    <h3 className=' font-semibold text-teal-400'>Testimonial</h3>
                     <h1>What Our Patients Says</h1>
                 </div>
                 <div className='flex justify-end'>
