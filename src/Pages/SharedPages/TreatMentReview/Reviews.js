@@ -5,7 +5,7 @@ import comma from '../../../assets/Icon/quote.svg';
 
 
 import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+
 
 const Reviews = () => {
 
@@ -40,21 +40,21 @@ const Reviews = () => {
             img: `${patient}`,
         },
         {
-            id: 1,
+            id: 2,
             name: "Winson Herry",
             description: "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
             location: "canada",
             img: `${patient}`,
         },
         {
-            id: 1,
+            id: 3,
             name: "Winson Herry",
             description: "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
             location: "canada",
             img: `${patient}`,
         },
         {
-            id: 1,
+            id: 4,
             name: "Winson Herry",
             description: "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
             location: "canada",

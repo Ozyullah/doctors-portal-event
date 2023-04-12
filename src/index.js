@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import PortalContext from './Context/PortalContext';
+import 'react-multi-carousel/lib/styles.css';
+import 'react-day-picker/dist/style.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
