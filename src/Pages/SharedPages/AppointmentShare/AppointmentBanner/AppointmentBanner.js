@@ -4,8 +4,8 @@ import backgroundi from '../../../../assets/bg.png';
 import { DayPicker } from 'react-day-picker';
 import { format } from 'date-fns';
 
-const AppointmentBanner = () => {
-    const [selectedDate, setSelectedDate]= useState(new Date())
+const AppointmentBanner = ({selectedDate, setSelectedDate}) => {
+    
     return (
         <header>
             <div className="hero" style={{backgroundImage:`url(${backgroundi})`}}>
@@ -23,7 +23,6 @@ const AppointmentBanner = () => {
                 
             </div>
 
-            <p className='text-center text-teal-500 text-xl'>Available Services on {format(selectedDate, 'PP')}</p>
         </header>
     );
 };
