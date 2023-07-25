@@ -6,6 +6,7 @@ const SignUp = () => {
 
     const { register, handleSubmit } = useForm();
     const [data, setData] = useState("")
+    console.log(data)
     return (
         <div className='h-[800px] flex justify-center items-center'>
             <div className='bg-white p-7 rounded-lg shadow-inner shadow-slate-600'>
@@ -19,7 +20,7 @@ const SignUp = () => {
                         <input {...register("name", { required: true })} type="text" placeholder="Enter your Full name" className="input input-bordered w-full max-w-xs" />
 
                     </div>
-
+                    {/* Photo section */}
                     <div className="form-control w-full max-w-xs">
                         <label className="label">
                             <span className="label-text">Photo</span>

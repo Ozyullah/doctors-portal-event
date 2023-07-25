@@ -51,9 +51,6 @@ const ModalAppoinment = ({ BookTreatment, selectedDate ,setBookTreatment}) => {
                         <input className='btn btn-success border-none' type='submit' value="Submite"></input>
                     </Form>
 
-                    <div className="modal-action">
-                        <label htmlFor="modal-open" className="btn">ok</label>
-                    </div>
                 </div>
             </div>
         </div>
