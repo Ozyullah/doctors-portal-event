@@ -1,16 +1,41 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../../ContextPages/ContextPages';
+import { GoogleAuthProvider } from 'firebase/auth';
 
+
+const provider = new GoogleAuthProvider();
 const Login = () => {
 
+    const {userSignInWithPassword, signInWithGoogle, emailVerification}=useContext(AuthContext)
+
+    const googleSignIn =()=>{
+        signInWithGoogle(provider)
+        .then((result)=>{
+            const credential =GoogleAuthProvider.credentialFromResult(result);
+            emailVerification();
+            console.log(credential)
+        })
+    }
+
+    const userSignInMethod=(data)=>{
+        console.log(data)
+        userSignInWithPassword(data.email, data.password)
+        .then((result)=>{
+            const user =result.user;
+        })
+        .catch(()=>{
+
+        })
+    }
     const { register, handleSubmit } = useForm();
-    const [data, setData] = useState("")
-    console.log(data)
+    // const [data, setData] = useState("")
+    // console.log(data)
     return (
         <div className='h-[800px] flex justify-center items-center'>
             <div className='bg-white p-7 rounded-lg shadow-inner shadow-slate-600'>
-                <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))} className='grid gap-5'>
+                <form onSubmit={handleSubmit(userSignInMethod)} className='grid gap-5'>
                     <h2 className='text-center font-semibold'>Login</h2>
                         {/* Email section  */}
                     <div className="form-control w-full max-w-xs">
@@ -39,7 +64,7 @@ const Login = () => {
 
                     <div className='divider'>OR</div>
 
-                    <button className='btn w-full'>CONTINUE WITH GOOGLE</button>
+                    <button onClick={googleSignIn} className='btn w-full'>CONTINUE WITH GOOGLE</button>
                 </div>
             </div>
 
